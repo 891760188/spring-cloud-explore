@@ -1,0 +1,15 @@
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: localhost  #注册中心的hostname
+  client:
+    registerWithEureka: false #是否需要注册到注册中心
+    fetchRegistry: false # 是否需要获取注册中心的信息
+    serviceUrl:  #注册中心的地址 注册中心的hostname ： 端口
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+spring:
+  application: #实例名称
+    name: eurka-server

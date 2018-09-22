@@ -1,0 +1,24 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: service-config
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+
+#配置文件的地址
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/891760188/spring-cloud-explore/
+          searchPaths: configFileDir
+          label: master
+          username: 891760198@qq.com
+          password: huang31250!!

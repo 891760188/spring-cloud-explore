@@ -1,4 +1,6 @@
 /target/
+config-client/target/
+config-server/target/
 !.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###

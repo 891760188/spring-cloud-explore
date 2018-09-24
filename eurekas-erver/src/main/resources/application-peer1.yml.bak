@@ -1,0 +1,12 @@
+server:
+  port: 8761
+
+spring:
+  profiles: peer1
+
+eureka:
+  instance:
+    hostname: peer1  #注册中心的hostname
+  client:
+    serviceUrl:  #注册中心的地址 注册中心的hostname ： 端口
+      defaultZone: http://peer2:8769/eureka/

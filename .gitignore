@@ -1,6 +1,7 @@
 /target/
 config-client/target/
 config-server/target/
+service-zipkin/target/
 !.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###

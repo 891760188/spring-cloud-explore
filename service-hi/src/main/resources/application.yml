@@ -4,8 +4,11 @@ server:
 spring:
   application:
     name: service-hi
+  zipkin: #链路追踪
+    base-url: http://localhost:9411/
 
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+

@@ -8,10 +8,21 @@ spring:
   application:
     name: service-zuul
 zuul:
-  routes:
+  routes: #路由
     api-a:  #以/api-a/ 开头的请求都转发给service-ribbon服务
       path: /api-a/**
       serviceId: service-ribbon
     api-b: #以/api-b/开头的请求都转发给service-feign服务
       path: /api-b/**
       serviceId: service-feign
+    #如果后端服务多达十几个的时候，每一个都这样配置也挺麻烦的，
+    #spring cloud zuul已经帮我们做了默认配置。默认情况下，
+    #Zuul会代理所有注册到Eureka Server的微服务，并且Zuul的路由规则如下：
+    #http://ZUUL_HOST:ZUUL_PORT/微服务在Eureka上的serviceId/**会被转发到serviceId对应的微服务。
+    #http://localhost:8769/service-hi/hi?token=2 =====两者是一样的效果===== http://localhost:8769/api-hi/hi?token=2
+    api-hi: #以/api-b/开头的请求都转发给service-feign服务
+      path: /api-hi/**
+      serviceId: service-hi
+    it: #以it开头的重定向
+      path: /it/**
+      serviceId: http://www.ityouknow.com/
